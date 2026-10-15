@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img">
+  <defs>
+    <!-- Fundo principal -->
+    <linearGradient id="bgBase" x1="8%" y1="8%" x2="92%" y2="92%">
+      <stop offset="0%" stop-color="#20D694"/>
+      <stop offset="45%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#1fd392"/>
+    </linearGradient>
+
+    <!-- Luz no canto -->
+    <radialGradient id="cornerGlow" cx="86%" cy="14%" r="70%">
+      <stop offset="0%" stop-color="#D9FF7A" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#8AF26D" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#8AF26D" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Brilho superior -->
+    <linearGradient id="topShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <!-- Forma escura interna -->
+    <linearGradient id="waveDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#50db7d"/>
+      <stop offset="100%" stop-color="#3fdca3"/>
+    </linearGradient>
+
+    <!-- Forma clara interna -->
+    <linearGradient id="waveLight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#63E35A"/>
+      <stop offset="100%" stop-color="#14C784"/>
+    </linearGradient>
+
+    <!-- Sombra suave do ícone -->
+    <filter id="iconShadow" x="-20%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="1.2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+
+    <!-- Clip do fundo arredondado -->
+    <clipPath id="clipCard">
+      <rect x="2" y="2" width="60" height="60" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <!-- Cartão sem sombra externa -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgBase)"/>
+
+  <g clip-path="url(#clipCard)">
+    <!-- brilho no canto superior direito -->
+    <rect x="2" y="2" width="60" height="60" fill="url(#cornerGlow)">
+      <animate attributeName="opacity" values="0.88;1;0.88" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- faixa curva escura -->
+    <path
+      d="M-2 16
+         C 10 11, 21 15, 31 21
+         C 40 26, 50 31, 66 43
+         L 66 66
+         L -2 66 Z"
+      fill="url(#waveDark)"
+      opacity="0.95">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; 0.6 0.2; 0 0"
+        dur="5.5s"
+        repeatCount="indefinite"/>
+    </path>
+
+    <!-- faixa curva clara inferior -->
+    <path
+      d="M-4 40
+         C 8 38, 16 41, 24 48
+         C 32 55, 42 61, 62 61
+         L 62 66
+         L -4 66 Z"
+      fill="url(#waveLight)"
+      opacity="0.92">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; -0.6 0.15; 0 0"
+        dur="6s"
+        repeatCount="indefinite"/>
+    </path>
+
+    <!-- grande forma curva translúcida no topo -->
+    <path
+      d="M3 10
+         C 14 4, 30 5, 44 12
+         C 53 17, 59 23, 62 31
+         L 62 41
+         C 55 32, 44 26, 33 22
+         C 22 18, 10 16, 3 10 Z"
+      fill="#FFFFFF"
+      opacity="0.13">
+      <animate attributeName="opacity" values="0.10;0.15;0.10" dur="4.5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- brilho superior -->
+    <path
+      d="M4 10
+         C 12 6, 26 6, 42 11
+         C 50 13, 57 17, 61 22
+         L 61 6
+         L 4 6 Z"
+      fill="url(#topShine)"
+      opacity="0.75"/>
+  </g>
+
+  <!-- contorno/realce externo -->
+  <rect x="2.8" y="2.8" width="58.4" height="58.4" rx="13.2"
+        fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="0.6"/>
+
+  <!-- Ícone -->
+  <g transform="translate(2 2) scale(2.5)" fill="#FFFFFF" filter="url(#iconShadow)">
+    <!-- base -->
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M5 16.25a.75.75 0 0 1 .75.75v2c0 .14.11.25.25.25h12a.25.25 0 0 0 .25-.25v-2a.75.75 0 0 1 1.5 0v2A1.75 1.75 0 0 1 18 20.75H6A1.75 1.75 0 0 1 4.25 19v-2a.75.75 0 0 1 .75-.75"/>
+
+    <!-- seta animada -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; 0 0.55; 0 0"
+        dur="2.2s"
+        repeatCount="indefinite"
+        keyTimes="0;0.5;1"
+        calcMode="spline"
+        keySplines="0.42 0 0.58 1; 0.42 0 0.58 1"/>
+      <path
+        d="M10.74 3.75a1 1 0 0 0-.99.9 37 37 0 0 0-.08 5.28l-.74.04-1.5.11a.76.76 0 0 0-.58 1.17 16 16 0 0 0 4.03 4.26l.6.43a.9.9 0 0 0 1.04 0l.6-.43a16 16 0 0 0 4.03-4.26.76.76 0 0 0-.59-1.17l-1.49-.1-.74-.05a37 37 0 0 0-.08-5.27 1 1 0 0 0-.99-.91z"/>
+    </g>
+  </g>
+</svg>
